@@ -4,7 +4,7 @@
 
 | Foto | Informasi Peserta | Peran / Jobdesk |
 | :---: | :--- | :--- |
-| <img src="https://github.com/MBagusEkaW.png" width="100px"> | **Nama:** M. Bagus Eka W.<br>**NRP:** (Isi NRP kamu)<br>**Kelas:** (Isi Kelas kamu) | - Owner Repository<br>- Embedded Programmer |
+| <img src="https://github.com/MBagusEkaW.png" width="100px"> | **Nama:** Muhammad Bagus Eka W.<br>**NRP:** (2124600037)<br>**Kelas:** (2 D4 Elektronika B) | - Hardware <br>- Project Manajer |
 | <img src="https://github.com/32-triwahyono.png" width="100px">| **Nama:** Tri Wahyono<br>**NRP:** 2124600032<br>**Kelas:** 2 D4 Elektronika B | - Programmer |
 | <img src="https://github.com/ilyasaurellius-tech.png" width="100px">| **Nama:** Rafael Ilyas Aurellius<br>**NRP:** 2124600042<br>**Kelas:** 2 D4 Elektronika B | - 3D Design|
 | <img src="https://github.com/GhaniaZahra2124600044.png" width="100px">| **Nama:** Ghania Zahra Arianty<br>**NRP:** 2124600044<br>**Kelas:** 2 D4 Elektronika B | - UI/UX Designer<br>- Non Teknis |
