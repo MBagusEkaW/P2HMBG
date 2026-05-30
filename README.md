@@ -48,7 +48,7 @@ Melalui integrasi sensor, alarm, dan sistem monitoring, proyek ini mampu memberi
 
 | Foto | Informasi Peserta | Peran / Jobdesk |
 | :---: | :--- | :--- |
-| <img src="https://github.com/MBagusEkaW.png" width="100px"> | **Nama:** Muhammad Bagus Eka Wijaya.<br>**NRP:** 2124600037<br>**Kelas:** 2 D4 Elektronika B<br>**Akun GitHub:** [@MBagusEkaW](https://github.com/MBagusEkaW)  | - Hardware <br>- Project Manajer |
+| <img src="https://github.com/MBagusEkaW.png" width="100px"> | **Nama:** Muhammad Bagus Eka Wijaya<br>**NRP:** 2124600037<br>**Kelas:** 2 D4 Elektronika B<br>**Akun GitHub:** [@MBagusEkaW](https://github.com/MBagusEkaW)  | - Hardware <br>- Project Manajer |
 | <img src="https://github.com/32-triwahyono.png" width="100px">| **Nama:** Tri Wahyono<br>**NRP:** 2124600032<br>**Kelas:** 2 D4 Elektronika B <br>**Akun GitHub:** [@32-triwahyono](https://github.com/32-triwahyono) | - Programmer |
 | <img src="https://github.com/ilyasaurellius-tech.png" width="100px">| **Nama:** Rafael Ilyas Aurellius<br>**NRP:** 2124600042<br>**Kelas:** 2 D4 Elektronika B <br>**Akun GitHub:** [@ilyasaurellius-tech](https://github.com/ilyasaurellius-tech) | - 3D Design|
 | <img src="https://github.com/GhaniaZahra2124600044.png" width="100px">| **Nama:** Ghania Zahra Arianty<br>**NRP:** 2124600044<br>**Kelas:** 2 D4 Elektronika B <br>**Akun GitHub:** [@GhaniaZahra2124600044](https://github.com/GhaniaZahra2124600044) | - UI/UX Designer<br>- Non Teknis |
