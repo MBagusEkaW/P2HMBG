@@ -1,6 +1,50 @@
-# 🚀 Project P2HMBG
+<p align="center">
+  <img src="assets/logo.png" width="250">
+</p>
 
-### 👥 Anggota Kelompok
+<h1 align="center"> P2HMBG</h1>
+
+<h3 align="center">
+Pemantauan dan Pengendalian Higienitas pada Dapur Program Makan Bergizi Gratis Berbasis Mikrokontroler
+</h3>
+
+
+---
+
+## Deskripsi Proyek
+
+**P2HMBG (Pemantauan dan Pengendalian Higienitas Makanan Bergizi Gratis)** merupakan sistem monitoring berbasis mikrokontroler yang dirancang untuk membantu menjaga standar higienitas pada proses penyimpanan dan pengolahan bahan makanan dalam Program Makan Bergizi Gratis (MBG).
+
+Sistem ini melakukan pemantauan terhadap parameter penting yang memengaruhi keamanan pangan, seperti suhu penyimpanan bahan protein, kelembapan area penyimpanan bahan makanan, serta kualitas air yang digunakan untuk proses pencucian. Data yang diperoleh akan digunakan sebagai indikator kondisi higienitas dapur dan gudang penyimpanan.
+
+Melalui integrasi sensor, alarm, dan sistem monitoring, proyek ini mampu memberikan peringatan dini apabila ditemukan kondisi yang berpotensi menyebabkan kerusakan bahan makanan atau kontaminasi. Dengan demikian, proses produksi makanan dapat berjalan lebih aman, higienis, dan sesuai standar keamanan pangan.
+
+---
+
+## Tujuan Proyek
+
+- Mengembangkan sistem monitoring higienitas dapur MBG secara otomatis dan real-time.
+- Memantau suhu penyimpanan bahan makanan agar tetap berada pada rentang aman.
+- Memantau kelembapan area penyimpanan guna menjaga kualitas bahan makanan.
+- Mengawasi kualitas air pencucian bahan makanan melalui sensor kekeruhan.
+- Memberikan peringatan dini apabila terjadi kondisi yang berpotensi menyebabkan kontaminasi pangan.
+- Membantu proses pencatatan dan dokumentasi kondisi higienitas sebagai pendukung evaluasi dan audit keamanan pangan.
+- Mendukung keberhasilan Program Makan Bergizi Gratis melalui penerapan teknologi monitoring yang efektif dan mudah digunakan.
+
+---
+
+## Support By
+
+- Dosen Pengampu: Akhmad Hendriawan, S.T., M.T.
+- Mata Kuliah: Mikrokontroler
+- Program Studi: D4 Teknik Elektronika
+- Politeknik Elektronika Negeri Surabaya (PENS)
+  
+
+---
+
+
+### Anggota Kelompok
 
 | Foto | Informasi Peserta | Peran / Jobdesk |
 | :---: | :--- | :--- |
