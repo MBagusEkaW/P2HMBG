@@ -27,7 +27,7 @@ void setup() {
   lcd.backlight();
   dht.begin();
 
-  // Konfigurasi pin tombol (Hanya 2 pin)
+  // Konfigurasi pin tombol 
   pinMode(PIN_SW_CHILLER, INPUT_PULLUP);
   pinMode(PIN_SW_FREEZER, INPUT_PULLUP);
   pinMode(PIN_BUZZER, OUTPUT);
@@ -35,7 +35,7 @@ void setup() {
   
   digitalWrite(PIN_BUZZER, LOW); 
 
-  // Tampilan judul 
+  // judul 
   lcd.setCursor(0, 0);
   lcd.print("  SISTEM KONTROL  ");
   lcd.setCursor(0, 1);
@@ -49,7 +49,16 @@ void loop() {
   float suhu = dht.readTemperature();
   int nilaiKekeruhan = analogRead(PIN_LDR);
 
-  // Kategori teks untuk nilai LDR
+  if (digitalRead(PIN_SW_CHILLER) == LOW)  modeAktif = CHILLER;
+  if (digitalRead(PIN_SW_FREEZER) == LOW)  modeAktif = FREEZER;
+
+  if (isnan(kelembapan) || isnan(suhu)) return;
+
+  bool kompresor = false;
+  bool alarmSuhu = false;
+  bool alarmAir = false;
+
+  // LOGIKA STATUS KEKERUHAN AIR (LDR) 
   String statusAir = "";
   if (nilaiKekeruhan <= 300) {
     statusAir = "JERNIH ";
@@ -57,42 +66,40 @@ void loop() {
     statusAir = "STANDAR";
   } else {
     statusAir = "KOTOR  ";
+    // Jika kotor dan alat sedang menyala, paksa alarm air menyala
+    if (modeAktif != STANDBY) {
+      alarmAir = true; 
+    }
   }
-
-  // Logika pengunci mode menggunakan 2 tombol
-  if (digitalRead(PIN_SW_CHILLER) == LOW)  modeAktif = CHILLER;
-  if (digitalRead(PIN_SW_FREEZER) == LOW)  modeAktif = FREEZER;
-
-  if (isnan(kelembapan) || isnan(suhu)) return;
-
-  bool kompresor = false;
-  bool alarm = false;
 
   // LOGIKA SUHU
   if (modeAktif == CHILLER) {
     if (suhu > 2.0) kompresor = true; 
     
     if (suhu >= 2.0 && suhu <= 8.0) {
-      alarm = false; // MASUK RANGE: Alarm dilarang aktif
+      alarmSuhu = false; // MASUK RANGE: Alarm dilarang aktif
     } else {
-      alarm = true;  // OUT RANGE: Alarm boleh aktif
+      alarmSuhu = true;  // OUT RANGE: Alarm boleh aktif
     }
   } 
   else if (modeAktif == FREEZER) {
     if (suhu > -25.0) kompresor = true;
     
     if (suhu >= -25.0 && suhu <= -15.0) {
-      alarm = false; // MASUK RANGE: Alarm dilarang aktif
+      alarmSuhu = false; // MASUK RANGE: Alarm dilarang aktif
     } else {
-      alarm = true;  // OUT RANGE: Alarm boleh aktif
+      alarmSuhu = true;  // OUT RANGE: Alarm boleh aktif
     }
   }
 
-  // EKSEKUSI FISIK OUTPUT
+  // Alarm akan bunyi jika SUHU di luar range ATAU AIR kotor
+  bool alarmTotal = (alarmSuhu || alarmAir);
+
+  // OUTPUT
   if (modeAktif != STANDBY) {
     digitalWrite(PIN_LED, kompresor ? HIGH : LOW);
     
-    if (alarm == true) {
+    if (alarmTotal == true) {
       unsigned long waktuSekarang = millis();
       if (waktuSekarang - waktuSebelumnya >= jedaBuzzer) {
         waktuSebelumnya = waktuSekarang; 
@@ -104,13 +111,12 @@ void loop() {
       statusBuzzer = LOW;
     }
   } else {
-    
     digitalWrite(PIN_LED, LOW);
     digitalWrite(PIN_BUZZER, LOW);
     statusBuzzer = LOW;
   }
 
-  // TAMPILKAN KE LCD 16x4 
+  // TAMPILKAN KE LCD 
   lcd.setCursor(0, 0);
   lcd.print("Suhu : "); lcd.print(suhu, 1); lcd.print(" C   ");
 
@@ -123,16 +129,17 @@ void loop() {
 
   lcd.setCursor(0, 3);
   if (modeAktif == CHILLER) {
-    if (alarm) lcd.print("CHILLER: OUT RNG");
-    else        lcd.print("CHILLER: AMAN   ");
+    if (alarmSuhu)       lcd.print("CHILLER: OUT RNG");
+    else if (alarmAir)   lcd.print("CHIL: AIR KERUH!");
+    else                 lcd.print("CHILLER: AMAN   ");
   } 
   else if (modeAktif == FREEZER) {
-    if (alarm) lcd.print("FREEZER: OUT RNG");
-    else        lcd.print("FREEZER: AMAN   ");
+    if (alarmSuhu)       lcd.print("FREEZER: OUT RNG");
+    else if (alarmAir)   lcd.print("FREZ: AIR KERUH!");
+    else                 lcd.print("FREEZER: AMAN   ");
   } 
   else {
     lcd.print("Mode : STANDBY  ");
   }
-
   delay(200); 
 }
