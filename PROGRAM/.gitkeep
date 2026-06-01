@@ -1,1 +1,1 @@
-
+kode program utama Arduino (main.cpp) untuk Sistem Kontrol P2HMBG. Program ini berfungsi untuk mengatur batas suhu otomatis (Mode Chiller & Freezer) dan menyalakan alarm peringatan jika air terdeteksi keruh atau suhu di luar batas aman. Udah, tinggal copas itu aja!
