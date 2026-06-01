@@ -16,7 +16,6 @@ DHT dht(PIN_DHT, DHTTYPE);
 
 enum ModeSistem { STANDBY, CHILLER, FREEZER };
 ModeSistem modeAktif = STANDBY; // Status awal saat alat baru nyala
-
 unsigned long waktuSebelumnya = 0;
 const long jedaBuzzer = 1000; 
 bool statusBuzzer = LOW;
@@ -32,7 +31,6 @@ void setup() {
   pinMode(PIN_SW_FREEZER, INPUT_PULLUP);
   pinMode(PIN_BUZZER, OUTPUT);
   pinMode(PIN_LED, OUTPUT);
-  
   digitalWrite(PIN_BUZZER, LOW); 
 
   // judul 
@@ -51,7 +49,6 @@ void loop() {
 
   if (digitalRead(PIN_SW_CHILLER) == LOW)  modeAktif = CHILLER;
   if (digitalRead(PIN_SW_FREEZER) == LOW)  modeAktif = FREEZER;
-
   if (isnan(kelembapan) || isnan(suhu)) return;
 
   bool kompresor = false;
@@ -75,7 +72,6 @@ void loop() {
   // LOGIKA SUHU
   if (modeAktif == CHILLER) {
     if (suhu > 2.0) kompresor = true; 
-    
     if (suhu >= 2.0 && suhu <= 8.0) {
       alarmSuhu = false; // MASUK RANGE: Alarm dilarang aktif
     } else {
@@ -84,7 +80,6 @@ void loop() {
   } 
   else if (modeAktif == FREEZER) {
     if (suhu > -25.0) kompresor = true;
-    
     if (suhu >= -25.0 && suhu <= -15.0) {
       alarmSuhu = false; // MASUK RANGE: Alarm dilarang aktif
     } else {
