@@ -1,4 +1,4 @@
-# 📋 SISTEM KONTROL P2HMBG - Aturan & Logika Sistem
+# SISTEM KONTROL P2HMBG - Aturan & Logika Sistem
 
 Sistem ini adalah purwarupa pengontrolan suhu untuk dua mode utama (CHILLER dan FREEZER), yang dilengkapi dengan pemantauan kualitas air dan kelembapan udara secara *real-time*.
 
