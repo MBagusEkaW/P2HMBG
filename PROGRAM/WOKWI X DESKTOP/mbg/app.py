@@ -6,8 +6,7 @@ from flask import Flask, render_template_string, jsonify
 
 app = Flask(__name__)
 
-# --- KONFIGURASI PORT ---
-# Jika hub4com pakai COM1, Python harus di COM2
+# KONFIGURASI PORT 
 SERIAL_PORT = 'COM2' 
 BAUD_RATE = 9600
 
@@ -45,9 +44,6 @@ def index():
 def get_data():
     return jsonify(sensor_data)
 
-# ====================================================
-# INI ADALAH KODE HTML ANDA YANG SUDAH DISAMBUNGKAN!
-# ====================================================
 HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="id">
