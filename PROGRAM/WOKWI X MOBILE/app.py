@@ -88,7 +88,7 @@ HTML_TEMPLATE = """
             padding-bottom: 60px; /* Jarak untuk bottom nav */
         }
 
-        /* --- LOGIN SCREEN (Kini di dalam ukuran HP) --- */
+        /*  LOGIN SCREEN (Kini di dalam ukuran HP)  */
         #login-screen { position: absolute; top: 0; left: 0; width: 100%; min-height: 100vh; background-color: #ffffff; z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
         .login-logo { width: 110px; height: 110px; margin: 0 auto 15px auto; border-radius: 50%; overflow: hidden; border: 3px solid #e3f2fd; box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3); background-color: #ffffff; }
         .login-logo img { width: 100%; height: 100%; object-fit: cover; }
