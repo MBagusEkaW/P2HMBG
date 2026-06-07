@@ -2,7 +2,7 @@ import serial
 import json
 import threading
 import time
-from flask import Flask, render_template_string, jsonify
+from flask import Flask, render_template_string, jsonify, url_for
 
 app = Flask(__name__)
 
@@ -51,7 +51,6 @@ HTML_TEMPLATE = """
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central-Kitchen Storage Safety Hub - P2HMBG</title>
-    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -78,8 +77,12 @@ HTML_TEMPLATE = """
         /* --- LOGIN SCREEN --- */
         #login-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: #ffffff; z-index: 1000; display: flex; align-items: center; justify-content: center; }
         .login-card { width: 100%; max-width: 400px; padding: 40px; text-align: center; }
-        .login-logo { width: 120px; height: 120px; background-color: var(--primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px auto; color: var(--primary); font-size: 50px; position: relative; }
-        .login-logo::before { content: ''; position: absolute; width: 160px; height: 160px; border: 2px solid var(--primary-light); border-radius: 50%; }
+        
+        /* Modifikasi Logo */
+        .login-logo-container { width: 140px; height: 140px; margin: 0 auto 30px auto; position: relative; display: flex; align-items: center; justify-content: center; }
+        .login-logo-img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; z-index: 2; position: relative; background-color: white;}
+        .login-logo-container::before { content: ''; position: absolute; width: 170px; height: 170px; border: 3px solid var(--primary-light); border-radius: 50%; z-index: 1; }
+        
         .login-title { color: var(--primary); font-weight: 700; font-size: 22px; margin-bottom: 5px; letter-spacing: 0.5px; }
         .login-subtitle { color: var(--primary); font-weight: 500; font-size: 14px; margin-bottom: 40px; }
         .input-group { width: 100%; margin-bottom: 20px; text-align: left; }
@@ -178,7 +181,11 @@ HTML_TEMPLATE = """
 
     <div id="login-screen">
         <div class="login-card">
-            <div class="login-logo"><i class="fa-solid fa-shield-halved"></i></div>
+            
+            <div class="login-logo-container">
+                <img src="/static/logo.png" alt="P2HMBG Logo" class="login-logo-img">
+            </div>
+
             <div class="login-title">CENTRAL-KITCHEN</div>
             <div class="login-subtitle">STORAGE SAFETY HUB</div>
             <div class="input-group"><input type="text" id="username-input" class="login-input" placeholder="Email / Username" autocomplete="off"></div>
@@ -368,9 +375,8 @@ HTML_TEMPLATE = """
         </main>
     </div>
 
-    <!-- JAVASCRIPT YANG SUDAH DISAMBUNGKAN KE PYTHON/WOKWI -->
     <script>
-        let alarmHistoryCount = 0; // Untuk mencegah spam tabel riwayat
+        let alarmHistoryCount = 0; 
         
         function doLogin() {
             const inputName = document.getElementById("username-input").value.trim();
@@ -408,7 +414,6 @@ HTML_TEMPLATE = """
             }, 1000);
         });
 
-        // INI KUNCINYA: Jembatan Web ke Wokwi lewat fetch API
         setInterval(() => {
             fetch('/api/data')
                 .then(response => response.json())
@@ -420,7 +425,6 @@ HTML_TEMPLATE = """
                     let statusAir = data.status_air;
                     let alarmTotal = data.alarm;
 
-                    // Hitung logic untuk indikator UI
                     let alarmAir = (statusAir === "KOTOR" && modeAktif !== "STANDBY");
                     let alarmSuhu = false;
                     let kompresor = false;
@@ -433,17 +437,14 @@ HTML_TEMPLATE = """
                         if (suhu < -25.0 || suhu > -15.0) alarmSuhu = true;
                     }
 
-                    // 1. UPDATE MODE & BADGE
                     const badge = document.getElementById("current-mode-badge");
                     badge.innerText = modeAktif;
                     badge.className = `mode-badge status-${modeAktif.toLowerCase()}`;
 
-                    // 2. UPDATE KOTAK RINGKASAN
                     document.getElementById("txt-suhu").innerText = `${suhu.toFixed(1)} °C`;
                     document.getElementById("txt-humid").innerText = `${kelembapan.toFixed(1)} %`;
                     document.getElementById("txt-air").innerHTML = `${nilaiKekeruhan} <span class="sub-val">${statusAir}</span>`;
 
-                    // 3. UPDATE HALAMAN CHILLER & FREEZER
                     document.getElementById("chiller-val-suhu").innerText = modeAktif === "CHILLER" ? `${suhu.toFixed(1)} °C` : "--.- °C";
                     document.getElementById("chiller-val-humid").innerText = modeAktif === "CHILLER" ? `${kelembapan.toFixed(1)} %` : "--.- %";
                     document.getElementById("freezer-val-suhu").innerText = modeAktif === "FREEZER" ? `${suhu.toFixed(1)} °C` : "--.- °C";
@@ -459,7 +460,6 @@ HTML_TEMPLATE = """
                         document.getElementById("chiller-gauge").style.width = `0%`;
                     }
 
-                    // 4. LOGIKA WARNA STATUS
                     const txtAirSpan = document.querySelector("#txt-air .sub-val");
                     if(statusAir === "KOTOR") txtAirSpan.style.color = "var(--danger)";
                     else if(statusAir === "STANDAR") txtAirSpan.style.color = "var(--warning)";
@@ -472,7 +472,6 @@ HTML_TEMPLATE = """
                     document.getElementById("alert-badge").innerText = alarmTotal ? "1" : "0";
                     updateBadge("lbl-alarm-status", alarmTotal ? "⚠️ Bahaya" : "Aman", alarmTotal);
 
-                    // 5. UPDATE TAMPILAN LCD I2C DI WEB
                     let line0 = `Suhu : ${suhu.toFixed(1)} C   `;
                     let line1 = `Humid: ${kelembapan.toFixed(1)} %   `;
                     let line2 = `Air:${nilaiKekeruhan} ${statusAir.padEnd(7, ' ')}`;
@@ -495,7 +494,6 @@ HTML_TEMPLATE = """
                     document.getElementById("lcd-row-2").innerText = line2.substring(0, 16);
                     document.getElementById("lcd-row-3").innerText = line3.substring(0, 16);
 
-                    // 6. ANIMASI LED AKTUATOR
                     const ledKomp = document.getElementById("led-kompresor");
                     if(kompresor) ledKomp.classList.add("active-kompresor");
                     else ledKomp.classList.remove("active-kompresor");
@@ -504,11 +502,10 @@ HTML_TEMPLATE = """
                     if(alarmTotal) ledBuzz.classList.add("active-alarm");
                     else ledBuzz.classList.remove("active-alarm");
 
-                    // 7. INPUT KE TABEL
                     logToTables(modeAktif, suhu, kelembapan, nilaiKekeruhan, statusAir, alarmTotal, alarmSuhu);
                 })
                 .catch(err => console.error("Koneksi ke Wokwi terputus!"));
-        }, 1000); // Minta data setiap 1 detik
+        }, 1000); 
 
         function updateBadge(id, text, isDanger) {
             const element = document.getElementById(id);
@@ -516,11 +513,9 @@ HTML_TEMPLATE = """
             element.className = isDanger ? "status-indicator danger" : "status-indicator normal";
         }
 
-        // Fungsi mencatat data ke tabel
         function logToTables(modeAktif, suhu, kelembapan, nilaiKekeruhan, statusAir, alarmTotal, alarmSuhu) {
             const timeStr = new Date().toLocaleTimeString();
             
-            // Log Dashboard
             const tbody = document.getElementById("log-table-body");
             const tr = document.createElement("tr");
             let stateBadge = alarmTotal ? `<span style="color:var(--danger); font-weight:600;"><i class="fa-solid fa-circle-exclamation"></i> ALARM</span>` : `<span style="color:var(--success); font-weight:600;"><i class="fa-solid fa-circle-check"></i> OK</span>`;
@@ -528,17 +523,15 @@ HTML_TEMPLATE = """
             tbody.insertBefore(tr, tbody.firstChild);
             if(tbody.children.length > 5) tbody.removeChild(tbody.lastChild);
 
-            // Log History
             const historyBody = document.getElementById("history-full-table-body");
             const trHist = document.createElement("tr");
             trHist.innerHTML = `<td>${timeStr}</td><td>${modeAktif}</td><td>${suhu.toFixed(1)} °C</td><td>${kelembapan.toFixed(1)} %</td><td>${nilaiKekeruhan}</td><td>${statusAir}</td>`;
             historyBody.insertBefore(trHist, historyBody.firstChild);
             if(historyBody.children.length > 20) historyBody.removeChild(historyBody.lastChild);
 
-            // Log Alarm (hanya jika ada bahaya)
             if(alarmTotal) {
                 alarmHistoryCount++;
-                if (alarmHistoryCount % 5 === 0) { // Biar tabel alarm ga penuh secepat kilat
+                if (alarmHistoryCount % 5 === 0) { 
                     const alertBody = document.getElementById("alerts-table-body");
                     if(alertBody.innerHTML.includes("Tidak ada alarm")) alertBody.innerHTML = "";
                     const trAlert = document.createElement("tr");
