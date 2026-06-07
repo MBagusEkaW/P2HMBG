@@ -78,10 +78,10 @@ HTML_TEMPLATE = """
         #login-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: #ffffff; z-index: 1000; display: flex; align-items: center; justify-content: center; }
         .login-card { width: 100%; max-width: 400px; padding: 40px; text-align: center; }
         
-        /* Modifikasi Logo */
-        .login-logo-container { width: 140px; height: 140px; margin: 0 auto 30px auto; position: relative; display: flex; align-items: center; justify-content: center; }
+        /* Modifikasi Layout Logo di Login - Dibuat sedikit lebih besar dan rapi */
+        .login-logo-container { width: 150px; height: 150px; margin: 0 auto 30px auto; position: relative; display: flex; align-items: center; justify-content: center; }
         .login-logo-img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; z-index: 2; position: relative; background-color: white;}
-        .login-logo-container::before { content: ''; position: absolute; width: 170px; height: 170px; border: 3px solid var(--primary-light); border-radius: 50%; z-index: 1; }
+        .login-logo-container::before { content: ''; position: absolute; width: 170px; height: 170px; border: 4px solid var(--primary-light); border-radius: 50%; z-index: 1; }
         
         .login-title { color: var(--primary); font-weight: 700; font-size: 22px; margin-bottom: 5px; letter-spacing: 0.5px; }
         .login-subtitle { color: var(--primary); font-weight: 500; font-size: 14px; margin-bottom: 40px; }
@@ -94,8 +94,11 @@ HTML_TEMPLATE = """
         /* --- APP CONTAINER --- */
         .app-container { display: none; min-height: 100vh; width: 100%; }
         .sidebar { width: var(--sidebar-w); background-color: #ffffff; border-right: 1px solid #e2e8f0; display: flex; flex-direction: column; position: fixed; height: 100vh; z-index: 100; }
+        
+        /* Modifikasi CSS untuk Logo di Sidebar */
         .sidebar-brand { padding: 24px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #f1f5f9; }
-        .brand-icon { font-size: 28px; color: var(--primary); }
+        .sidebar-brand-img { width: 40px; height: 40px; object-fit: contain; border-radius: 8px; background-color: white; }
+        
         .brand-text h1 { font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: 0.5px; }
         .brand-text span { font-size: 11px; color: var(--muted); text-transform: uppercase; }
         .sidebar-menu { padding: 24px 16px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1; }
@@ -181,11 +184,9 @@ HTML_TEMPLATE = """
 
     <div id="login-screen">
         <div class="login-card">
-            
             <div class="login-logo-container">
-                <img src="/static/logo.png" alt="P2HMBG Logo" class="login-logo-img">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="P2HMBG Logo" class="login-logo-img">
             </div>
-
             <div class="login-title">CENTRAL-KITCHEN</div>
             <div class="login-subtitle">STORAGE SAFETY HUB</div>
             <div class="input-group"><input type="text" id="username-input" class="login-input" placeholder="Email / Username" autocomplete="off"></div>
@@ -197,7 +198,7 @@ HTML_TEMPLATE = """
     <div class="app-container" id="main-app">
         <aside class="sidebar">
             <div class="sidebar-brand">
-                <i class="fa-solid fa-shield-halved brand-icon"></i>
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="sidebar-brand-img">
                 <div class="brand-text"><h1>P2HMBG</h1><span>Storage Hub</span></div>
             </div>
             <nav class="sidebar-menu">
