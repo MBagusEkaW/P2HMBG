@@ -11,6 +11,37 @@ Pemantauan dan Pengendalian Higienitas pada Dapur Program Makan Bergizi Gratis B
 
 ---
 
+<h2 align="center">Tautan Cepat (Quick Links)</h2>
+
+<p align="center">
+  <a href="MASUKKAN_LINK_VIDEO_INTRO">
+    <img src="https://img.shields.io/badge/VIDEO%20INTRO-87CEEB?style=for-the-badge&logo=youtube&logoColor=white">
+  </a>
+  <a href="https://youtu.be/u526pXVK99U?si=f02qRPftz0TSHqTd">
+    <img src="https://img.shields.io/badge/VIDEO%20DEMO-87CEEB?style=for-the-badge&logo=youtube&logoColor=white">
+  </a>
+  <a href="MASUKKAN_LINK_VIDEO_3D">
+    <img src="https://img.shields.io/badge/VIDEO%203D-87CEEB?style=for-the-badge&logo=youtube&logoColor=white">
+  </a>
+  <a href="https://www.figma.com/board/bQE4WAdtDl1hIuNJlHP3sh/mindmap-mikro?t=WwnwOt33bXQIF5RT-6">
+    <img src="https://img.shields.io/badge/MINDMAP-87CEEB?style=for-the-badge&logo=figma&logoColor=white">
+  </a>
+  <a href="https://www.figma.com/board/6QvkNq0CwKF0hNGVI6O3Mw/FISHBONE-MIKRO?t=WwnwOt33bXQIF5RT-6">
+    <img src="https://img.shields.io/badge/FISHBONE-87CEEB?style=for-the-badge&logo=figma&logoColor=white">
+  </a>
+  <a href="https://www.figma.com/design/sN7gbUCHdcHoayXiUdRcwb/UI-MIKROOO--Copy-?m=auto&t=WwnwOt33bXQIF5RT-6">
+    <img src="https://img.shields.io/badge/UI%2FUX%20DESAIN-87CEEB?style=for-the-badge&logo=figma&logoColor=white">
+  </a>
+  <a href="https://wokwi.com/projects/465411808018718721">
+    <img src="https://img.shields.io/badge/SIMULASI%20WOKWI-87CEEB?style=for-the-badge&logo=arduino&logoColor=white">
+  </a>
+  <a href="https://canva.link/azohd2y7iiylqhz">
+    <img src="https://img.shields.io/badge/PPT%20CANVA-87CEEB?style=for-the-badge&logo=canva&logoColor=white">
+  </a>
+</p>
+
+---
+
 ## Deskripsi Proyek
 
 **P2HMBG (Pemantauan dan Pengendalian Higienitas Makanan Bergizi Gratis)** merupakan sistem monitoring berbasis mikrokontroler yang dirancang untuk membantu menjaga standar higienitas pada proses penyimpanan dan pengolahan bahan makanan dalam Program Makan Bergizi Gratis (MBG).
@@ -69,8 +100,6 @@ Melalui integrasi sensor, alarm, dan sistem monitoring, proyek ini mampu memberi
 ---
 
 ## Design UI/UX
-
-Link Figma: [Klik di sini untuk membuka desain UI/UX](https://www.figma.com/design/sN7gbUCHdcHoayXiUdRcwb/UI-MIKROOO--Copy-?m=auto&t=qCBi9tDxI9yxIuRx-6)
 
 ### Tampilan Aplikasi P2HMBG
 
