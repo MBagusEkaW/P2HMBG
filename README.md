@@ -14,13 +14,13 @@ Pemantauan dan Pengendalian Higienitas pada Dapur Program Makan Bergizi Gratis B
 <h2 align="center">Tautan Cepat (Quick Links)</h2>
 
 <p align="center">
-  <a href="MASUKKAN_LINK_VIDEO_INTRO">
+  <a href="https://youtu.be/Gd13VBAWVlc">
     <img src="https://img.shields.io/badge/VIDEO%20INTRO-87CEEB?style=for-the-badge&logo=youtube&logoColor=white">
   </a>
   <a href="https://youtu.be/u526pXVK99U?si=f02qRPftz0TSHqTd">
     <img src="https://img.shields.io/badge/VIDEO%20DEMO-87CEEB?style=for-the-badge&logo=youtube&logoColor=white">
   </a>
-  <a href="MASUKKAN_LINK_VIDEO_3D">
+  <a href="https://youtu.be/6L2N45QqC9I">
     <img src="https://img.shields.io/badge/VIDEO%203D-87CEEB?style=for-the-badge&logo=youtube&logoColor=white">
   </a>
   <a href="https://www.figma.com/board/bQE4WAdtDl1hIuNJlHP3sh/mindmap-mikro?t=WwnwOt33bXQIF5RT-6">
