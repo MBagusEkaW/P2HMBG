@@ -67,3 +67,42 @@ Melalui integrasi sensor, alarm, dan sistem monitoring, proyek ini mampu memberi
 - LED / Kompresor
 
 ---
+
+---
+
+## Design UI/UX
+
+Link Figma: [Klik di sini untuk membuka desain UI/UX](https://www.figma.com/design/sN7gbUCHdcHoayXiUdRcwb/UI-MIKROOO--Copy-?m=auto&t=qCBi9tDxI9yxIuRx-6)
+
+### Tampilan Aplikasi P2HMBG
+
+<table>
+  <tr>
+    <td align="center">
+      <b>Login</b><br>
+      <img src="UI%20UX/Login_P2HMBG.png" width="250">
+    </td>
+    <td align="center">
+      <b>Dashboard</b><br>
+      <img src="UI%20UX/Dashboard_P2HMBG.png" width="250">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>Chiller</b><br>
+      <img src="UI%20UX/Chiller_P2HMBG.png" width="250">
+    </td>
+    <td align="center">
+      <b>Freezer</b><br>
+      <img src="UI%20UX/Freezer_P2HMBG.png" width="250">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>History</b><br>
+      <img src="UI%20UX/History_P2HMBG.png" width="250">
+    </td>
+  </tr>
+</table>
+
+---
