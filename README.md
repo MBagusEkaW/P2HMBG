@@ -54,3 +54,16 @@ Melalui integrasi sensor, alarm, dan sistem monitoring, proyek ini mampu memberi
 | <img src="https://github.com/GhaniaZahra2124600044.png" width="100px">| **Nama:** Ghania Zahra Arianty<br>**NRP:** 2124600044<br>**Kelas:** 2 D4 Elektronika B <br>**Akun GitHub:** [@GhaniaZahra2124600044](https://github.com/GhaniaZahra2124600044) | - UI/UX Designer<br>- Non Teknis |
 | <img src="https://github.com/carl7825.png" width="100px">| **Nama:** Cikal Angger Priagung<br>**NRP:** 2124600056<br>**Kelas:** 2 D4 Elektronika B <br>**Akun GitHub:** [@carl7825](https://github.com/carl7825) | - Programmer| 
 | <img src="https://github.com/Fchrz10.png" width="100px">| **Nama:** Aydin Fachreza Syahmi<br>**NRP:** 2124600048<br>**Kelas:** 2 D4 Elektronika B <br>**Akun GitHub:** [@Fchrz10](https://github.com/Fchrz10) | - QA|
+---
+
+## Komponen yang Digunakan
+
+- LDR / Sensor Kekeruhan Air
+- DHT22
+- SW 1 Chiller
+- SW 2 Freezer
+- LCD I2C 16x4
+- Buzzer
+- LED / Kompresor
+
+---
