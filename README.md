@@ -144,6 +144,9 @@ Desain ini dibuat agar alat terlihat rapi, mudah digunakan, dan sesuai untuk keb
 <p align="center">
   <img src="3D%20DESIGN/dokumentasi/Left%20View.png" width="800">
 </p>
+<p align="center">
+  <img src="3D%20DESIGN/dokumentasi/3D.jpeg" width="800">
+</p>
 ---
 
 ## Blok Diagram
@@ -220,7 +223,7 @@ Dengan rancangan ini, sistem P2HMBG tidak hanya mampu melakukan pemantauan lokal
 Mindmap ini menjelaskan proses pemilihan ide proyek P2HMBG berdasarkan permasalahan utama pada Program Makan Bergizi Gratis, yaitu risiko keracunan akibat kualitas bahan, proses pengolahan, penyimpanan, dan distribusi yang belum terkontrol optimal.
 
 <p align="center">
-  <img src="assets/MindMapMBG.pdf" width="800">
+  <img src="assets/MINDMAP.png" width="800">
 </p>
 
 Dari beberapa alternatif solusi, ide yang dipilih adalah **Pemantauan dan Pengendalian Higienitas Dapur Program Makan Bergizi Gratis (P2HMBG)**. Ide ini dipilih karena berfokus pada monitoring suhu, kelembapan, dan kejernihan air secara real-time untuk menjaga kualitas bahan baku sebelum diolah, dengan biaya implementasi yang lebih efisien dan dapat diterapkan di banyak dapur MBG.
