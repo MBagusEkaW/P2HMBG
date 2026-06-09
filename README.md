@@ -68,8 +68,6 @@ Melalui integrasi sensor, alarm, dan sistem monitoring, proyek ini mampu memberi
 
 ---
 
----
-
 ## Design UI/UX
 
 Link Figma: [Klik di sini untuk membuka desain UI/UX](https://www.figma.com/design/sN7gbUCHdcHoayXiUdRcwb/UI-MIKROOO--Copy-?m=auto&t=qCBi9tDxI9yxIuRx-6)
