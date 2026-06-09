@@ -11,6 +11,11 @@ Pemantauan dan Pengendalian Higienitas pada Dapur Program Makan Bergizi Gratis B
 
 ---
 
+<p align="center">
+  <img src="assets/PosterP2HMBG.png" width="800">
+</p>
+
+---
 <h2 align="center">Tautan Cepat (Quick Links)</h2>
 
 <p align="center">
