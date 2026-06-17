@@ -317,4 +317,14 @@ Selain output lokal, data juga dikirim melalui komunikasi **Serial USB** dalam f
 7. Jalankan server Flask untuk menampilkan data pada dashboard web.
 8. Buka dashboard melalui web browser untuk memantau data secara real-time.
 
+---
 
+## Dokumentasi 
+
+Berikut adalah beberapa dokumentasi teknis dan pengerjaan proyek P2HMBG:
+
+<p align="center">
+  <img src="assets/DOKUM1.png" width="260">
+  <img src="assets/DOKUM2.png" width="260">
+  <img src="assets/DOKUM3.png" width="260">
+</p>
