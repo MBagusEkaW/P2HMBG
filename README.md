@@ -19,6 +19,9 @@ Pemantauan dan Pengendalian Higienitas pada Dapur Program Makan Bergizi Gratis B
 <h2 align="center">Tautan Cepat (Quick Links)</h2>
 
 <p align="center">
+  <a href="https://youtu.be/ipgqOhbjTiM">
+    <img src="https://img.shields.io/badge/VIDEO%20PRESENTASI-87CEEB?style=for-the-badge&logo=youtube&logoColor=white">
+  </a>
   <a href="https://youtu.be/Gd13VBAWVlc">
     <img src="https://img.shields.io/badge/VIDEO%20INTRO-87CEEB?style=for-the-badge&logo=youtube&logoColor=white">
   </a>
@@ -105,50 +108,29 @@ Melalui integrasi sensor, alarm, dan sistem monitoring, proyek ini mampu memberi
 ---
 
 # Visualisasi Sistem
+## Mindmap Diagram
 
-## Desain Hardware
-
-Desain hardware P2HMBG dirancang sebagai sistem pemantauan higienitas dapur MBG berbasis mikrokontroler. Sistem ini menggunakan sensor dan aktuator untuk memantau kondisi lingkungan penyimpanan bahan makanan, seperti suhu, kelembapan, dan kualitas air pencucian.
-
-Pada sistem ini, mikrokontroler berperan sebagai pusat kendali yang membaca data dari sensor, menampilkan informasi pada LCD, serta mengaktifkan indikator atau alarm apabila kondisi terdeteksi berada di luar batas aman.
+Mindmap ini menjelaskan proses pemilihan ide proyek P2HMBG berdasarkan permasalahan utama pada Program Makan Bergizi Gratis, yaitu risiko keracunan akibat kualitas bahan, proses pengolahan, penyimpanan, dan distribusi yang belum terkontrol optimal.
 
 <p align="center">
-  <img src="HARDWARE/SKEMATIK%20PCB.png" width="800">
+  <img src="assets/MINDMAP.png" width="800">
 </p>
-<p align="center">
-  <img src="HARDWARE/PCB%20ATAS.png" width="800">
-</p>
-<p align="center">
-  <img src="HARDWARE/PCB%20DESIGN.png" width="800">
-</p>
+
+Dari beberapa alternatif solusi, ide yang dipilih adalah **Pemantauan dan Pengendalian Higienitas Dapur Program Makan Bergizi Gratis (P2HMBG)**. Ide ini dipilih karena berfokus pada monitoring suhu, kelembapan, dan kejernihan air secara real-time untuk menjaga kualitas bahan baku sebelum diolah, dengan biaya implementasi yang lebih efisien dan dapat diterapkan di banyak dapur MBG.
 
 ---
 
-## Desain 3D
+## Fishbone Diagram
 
-Desain 3D P2HMBG dibuat sebagai visualisasi bentuk fisik alat monitoring higienitas dapur MBG. Rancangan ini menggunakan bentuk box panel yang berfungsi sebagai tempat utama untuk meletakkan komponen elektronik seperti mikrokontroler, LCD, tombol, buzzer, indikator LED, serta jalur konektor sensor.
-
-Pada bagian atas alat terdapat LCD sebagai media tampilan data monitoring, tombol input untuk pengoperasian sistem, serta indikator LED yang menunjukkan status kondisi sistem seperti status chiller, freezer, dan sensor. Bagian sisi box dilengkapi lubang ventilasi untuk membantu sirkulasi udara di dalam casing, sedangkan konektor pada bagian depan digunakan sebagai jalur penghubung sensor atau kabel eksternal.
-
-Desain ini dibuat agar alat terlihat rapi, mudah digunakan, dan sesuai untuk kebutuhan simulasi sistem pemantauan higienitas pada dapur Program Makan Bergizi Gratis.
+Fishbone diagram digunakan untuk menganalisis akar permasalahan yang berkaitan dengan higienitas dapur MBG. Diagram ini membantu mengidentifikasi faktor penyebab masalah dari beberapa aspek, seperti manusia, metode, alat, lingkungan, material, dan pengukuran.
 
 <p align="center">
-  <img src="3D%20DESIGN/dokumentasi/Front%20View.png" width="800">
+  <img src="assets/FishBoneMBG.jpg" width="800">
 </p>
-<p align="center">
-  <img src="3D%20DESIGN/dokumentasi/Front%20Bottom%20View.png" width="800">
-</p>
-<p align="center">
-  <img src="3D%20DESIGN/dokumentasi/Right%20View.png" width="800">
-</p>
-<p align="center">
-  <img src="3D%20DESIGN/dokumentasi/Left%20View.png" width="800">
-</p>
-<p align="center">
-  <img src="3D%20DESIGN/dokumentasi/3D.jpeg" width="800">
-</p>
+
+Berdasarkan analisis fishbone, permasalahan utama yang ingin diselesaikan adalah kurangnya pemantauan otomatis terhadap kondisi higienitas dapur dan penyimpanan bahan makanan. Tanpa sistem pemantauan yang baik, risiko kontaminasi pangan, kerusakan bahan makanan, dan penurunan kualitas makanan dapat meningkat.
+
 ---
-
 ## Blok Diagram
 
 Blok diagram berikut menjelaskan hubungan antar komponen pada sistem P2HMBG. Sensor berfungsi sebagai input untuk membaca kondisi lingkungan, mikrokontroler memproses data, kemudian hasilnya ditampilkan melalui LCD dan diteruskan ke output berupa LED atau buzzer sebagai indikator kondisi sistem.
@@ -218,30 +200,23 @@ Dengan rancangan ini, sistem P2HMBG tidak hanya mampu melakukan pemantauan lokal
 
 ---
 
-## Mindmap Diagram
+## Desain Hardware
 
-Mindmap ini menjelaskan proses pemilihan ide proyek P2HMBG berdasarkan permasalahan utama pada Program Makan Bergizi Gratis, yaitu risiko keracunan akibat kualitas bahan, proses pengolahan, penyimpanan, dan distribusi yang belum terkontrol optimal.
+Desain hardware P2HMBG dirancang sebagai sistem pemantauan higienitas dapur MBG berbasis mikrokontroler. Sistem ini menggunakan sensor dan aktuator untuk memantau kondisi lingkungan penyimpanan bahan makanan, seperti suhu, kelembapan, dan kualitas air pencucian.
 
-<p align="center">
-  <img src="assets/MINDMAP.png" width="800">
-</p>
-
-Dari beberapa alternatif solusi, ide yang dipilih adalah **Pemantauan dan Pengendalian Higienitas Dapur Program Makan Bergizi Gratis (P2HMBG)**. Ide ini dipilih karena berfokus pada monitoring suhu, kelembapan, dan kejernihan air secara real-time untuk menjaga kualitas bahan baku sebelum diolah, dengan biaya implementasi yang lebih efisien dan dapat diterapkan di banyak dapur MBG.
-
----
-
-## Fishbone Diagram
-
-Fishbone diagram digunakan untuk menganalisis akar permasalahan yang berkaitan dengan higienitas dapur MBG. Diagram ini membantu mengidentifikasi faktor penyebab masalah dari beberapa aspek, seperti manusia, metode, alat, lingkungan, material, dan pengukuran.
+Pada sistem ini, mikrokontroler berperan sebagai pusat kendali yang membaca data dari sensor, menampilkan informasi pada LCD, serta mengaktifkan indikator atau alarm apabila kondisi terdeteksi berada di luar batas aman.
 
 <p align="center">
-  <img src="assets/FishBoneMBG.jpg" width="800">
+  <img src="HARDWARE/SKEMATIK%20PCB.png" width="800">
+</p>
+<p align="center">
+  <img src="HARDWARE/PCB%20ATAS.png" width="800">
+</p>
+<p align="center">
+  <img src="HARDWARE/PCB%20DESIGN.png" width="800">
 </p>
 
-Berdasarkan analisis fishbone, permasalahan utama yang ingin diselesaikan adalah kurangnya pemantauan otomatis terhadap kondisi higienitas dapur dan penyimpanan bahan makanan. Tanpa sistem pemantauan yang baik, risiko kontaminasi pangan, kerusakan bahan makanan, dan penurunan kualitas makanan dapat meningkat.
-
 ---
-
 ## Design UI/UX
 
 
@@ -277,8 +252,8 @@ UI/UX P2HMBG dirancang untuk memudahkan pengguna dalam memantau kondisi dapur da
     </td>
   </tr>
 </table>
----
 
+---
 ## Simulasi Program Wokwi
 
 
@@ -294,7 +269,34 @@ Simulasi Wokwi digunakan untuk menguji logika kerja sistem P2HMBG sebelum ditera
 Pada simulasi, beberapa komponen digunakan sebagai representasi dari kondisi nyata di dapur MBG. DHT22 digunakan untuk membaca suhu dan kelembapan, LDR digunakan sebagai simulasi sensor kekeruhan air, switch digunakan sebagai input kondisi chiller dan freezer, sedangkan buzzer serta LED digunakan sebagai indikator peringatan.
 
 ---
-# Cara Kerja Sistem
+
+## Desain 3D
+
+Desain 3D P2HMBG dibuat sebagai visualisasi bentuk fisik alat monitoring higienitas dapur MBG. Rancangan ini menggunakan bentuk box panel yang berfungsi sebagai tempat utama untuk meletakkan komponen elektronik seperti mikrokontroler, LCD, tombol, buzzer, indikator LED, serta jalur konektor sensor.
+
+Pada bagian atas alat terdapat LCD sebagai media tampilan data monitoring, tombol input untuk pengoperasian sistem, serta indikator LED yang menunjukkan status kondisi sistem seperti status chiller, freezer, dan sensor. Bagian sisi box dilengkapi lubang ventilasi untuk membantu sirkulasi udara di dalam casing, sedangkan konektor pada bagian depan digunakan sebagai jalur penghubung sensor atau kabel eksternal.
+
+Desain ini dibuat agar alat terlihat rapi, mudah digunakan, dan sesuai untuk kebutuhan simulasi sistem pemantauan higienitas pada dapur Program Makan Bergizi Gratis.
+
+<p align="center">
+  <img src="3D%20DESIGN/dokumentasi/Front%20View.png" width="800">
+</p>
+<p align="center">
+  <img src="3D%20DESIGN/dokumentasi/Front%20Bottom%20View.png" width="800">
+</p>
+<p align="center">
+  <img src="3D%20DESIGN/dokumentasi/Right%20View.png" width="800">
+</p>
+<p align="center">
+  <img src="3D%20DESIGN/dokumentasi/Left%20View.png" width="800">
+</p>
+<p align="center">
+  <img src="3D%20DESIGN/dokumentasi/3D.jpeg" width="800">
+</p>
+
+
+---
+## Cara Kerja Sistem
 
 Sistem P2HMBG bekerja dengan membaca data dari beberapa input, yaitu sensor suhu dan kelembapan **DHT22**, sensor kekeruhan air berbasis **LDR**, serta switch mode operasi **Chiller/Freezer**.
 
